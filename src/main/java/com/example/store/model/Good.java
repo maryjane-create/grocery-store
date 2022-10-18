@@ -44,6 +44,6 @@ public class Good {
 
     @Override
     public  String toString(){
-        return "customer" +id + "has name " +name + "bought goods of price "+ price;
+        return "customer " + id + " bought " +name + " worth "+ price;
     }
 }

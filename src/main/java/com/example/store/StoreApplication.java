@@ -3,13 +3,14 @@ package com.example.store;
 import com.example.store.model.Good;
 import com.example.store.repository.GoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.List;
 
 @SpringBootApplication
-public class StoreApplication {
+public class StoreApplication implements CommandLineRunner {
 
     @Autowired
     private  GoodRepository repo;
@@ -18,9 +19,8 @@ public class StoreApplication {
         SpringApplication.run(StoreApplication.class, args);
     }
 
-
-
-    public  void run(String ...args) throws  Exception{
+    @Override
+    public  void run(String... args) throws  Exception{
         Good customer1= new Good("1", "sugar", "4000");
         Good customer2= new Good("2", "bread", "400");
         Good customer3= new Good("3", "rice", "3500");
