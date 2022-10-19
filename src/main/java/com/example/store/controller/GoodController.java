@@ -5,6 +5,7 @@ import com.example.store.dto.GoodDto;
 import com.example.store.model.Good;
 import com.example.store.repository.GoodRepository;
 import com.example.store.service.GoodService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,13 @@ import java.util.List;
 @RestController
 public class GoodController {
 
+
+   private GoodRepository repository;
+
+   @Autowired
+    public void GoodRepositoryNotNull(GoodRepository repository){
+        this.repository=repository;
+    }
 
     @RequestMapping(value = "/detail")
     public Good goodDetails(Good good, GoodService goodService){
