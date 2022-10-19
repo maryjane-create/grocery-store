@@ -3,6 +3,7 @@ package com.example.store.controller;
 
 import com.example.store.dto.GoodDto;
 import com.example.store.model.Good;
+import com.example.store.repository.GoodRepository;
 import com.example.store.service.GoodService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,8 +22,20 @@ public class GoodController {
         return good ;
     }
 
-    public List<Good> getAllGoods(){
+    public  String saveGood(Good newStock, GoodService goodService){
+        newStock.setName(newStock.getName());
+        newStock.setPrice(newStock.getPrice());
+        newStock.setId(newStock.getId());
+        goodService.add(newStock);
+        return "product with id "+ newStock.getId()+"has been added";
 
+    }
+
+    @RequestMapping("/all-goods")
+    public List<Good> getAllGoods(){
+        GoodService allTheGoods=new GoodService();
+        List<Good> goods=allTheGoods.allGoods();
+        return  goods;
     }
 
 
