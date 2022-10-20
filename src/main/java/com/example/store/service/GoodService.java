@@ -13,7 +13,7 @@ import java.util.Optional;
 @Service
 public class GoodService {
 
-    @Autowired
+
     private GoodRepository repository;
 
     @ResponseBody
@@ -30,8 +30,8 @@ public class GoodService {
 
 
     public Good add(Good good) {
-       Good newGood= repository.insert(good);
-       repository.save(newGood);
-       return newGood;
+       repository.insert(allGoods());
+       repository.save(good);
+       return good;
     }
 }

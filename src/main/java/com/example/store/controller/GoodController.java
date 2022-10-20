@@ -48,10 +48,5 @@ public class GoodController {
 
 
 
-//    @RequestMapping(value = "/update-list", method = RequestMethod.POST)
-//    public  String updateGoodList(){
-//
-//
-//    }
 
 }

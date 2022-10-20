@@ -12,16 +12,24 @@ class GoodServiceTest {
     private  GoodService goodService;
     private GoodRepository goodRepo;
 
+    public  void  service(){
+        this.goodService=goodService;
+    }
+
+    public void serve(){
+        this.goodRepo=goodRepo;
+    }
+
 
 
     @Test
     public void  testThatBookIsAdded(){
-        Good good = new Good();
-        good.setName("milk");
-        good.setPrice("56");
-//        Assertions.assertEquals("5",good.getId() );
-        Assertions.assertEquals("56", good.getPrice());
-        Assertions.assertEquals(1, goodRepo.findAll().size());
+        Good good =new Good();
+        good.setName("name");
+        good.setPrice("45");
+        good.setId("yu");
+        goodService.add(good);
+        Assertions.assertNotNull(goodRepo);
     }
 
 }
