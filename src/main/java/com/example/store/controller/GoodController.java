@@ -41,9 +41,7 @@ public class GoodController {
 
     @RequestMapping("/all-goods")
     public List<Good> getAllGoods(){
-        GoodService allTheGoods=new GoodService();
-        List<Good> goods=allTheGoods.allGoods();
-        return  goods;
+        return  null;
     }
 
 

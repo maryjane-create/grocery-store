@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class GoodServiceTest {
 
     private  GoodService goodService;
+
     private GoodRepository goodRepo;
 
     public  void  service(){
@@ -24,12 +25,9 @@ class GoodServiceTest {
 
     @Test
     public void  testThatBookIsAdded(){
-        Good good =new Good();
-        good.setName("name");
-        good.setPrice("45");
-        good.setId("yu");
-        goodService.add(good);
-        Assertions.assertNotNull(goodRepo);
+      Good good = new Good();
+
+
     }
 
 }

@@ -1,37 +1,20 @@
 package com.example.store.service;
 
 import com.example.store.model.Good;
-import com.example.store.repository.GoodRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @Service
-public class GoodService {
+public interface GoodService {
 
+public List<Good> findAllBooks();
 
-    private GoodRepository repository;
+public Good saveGood(Good good, String id);
 
-    @ResponseBody
-    public List<Good> allGoods(){
-        return repository.findAll();
-    }
-    
+public  Good findGoodById(String id);
 
-    @ResponseBody
-    public Optional<Good> findGood(String id){
-        Optional<Good> good=repository.findById(id);
-        return  good;
-    }
+public  void  deleteGood(Good good);
 
-
-    public Good add(Good good) {
-       repository.insert(allGoods());
-       repository.save(good);
-       return good;
-    }
 }
