@@ -30,6 +30,12 @@ public class GoodServiceImpl implements  GoodService{
 
     @Override
     public Good findGoodById(String id) {
+        for (Map.Entry<String, Good> good :
+                goods.entrySet()){
+            if (good.getKey().equals(id)){
+                return (Good) good;
+            }
+        }
         return null;
     }
 
