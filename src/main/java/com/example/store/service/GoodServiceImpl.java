@@ -37,4 +37,9 @@ public class GoodServiceImpl implements  GoodService{
     public void deleteGood(Good good) {
 
     }
+
+    @Override
+    public void add(Good good) {
+
+    }
 }

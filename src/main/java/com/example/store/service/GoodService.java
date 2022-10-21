@@ -17,4 +17,5 @@ public  Good findGoodById(String id);
 
 public  void  deleteGood(Good good);
 
+    void add(Good good);
 }
